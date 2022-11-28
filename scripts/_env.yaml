@@ -1,0 +1,31 @@
+name: HUMAN_BERT_2
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - pytorch
+  - torchvision
+  - cudatoolkit=11.3
+  - cuda
+  - pip
+  - pip:
+    - hydra-core
+    - pytorch-lightning
+    - opencv-python
+    - joblib
+    - cython
+    - scikit-learn==0.22
+    - scikit-image
+    - git+https://github.com/brjathu/NMR.git
+    - git+https://github.com/facebookresearch/pytorchvideo.git
+    - chumpy
+    - pyrender
+    - ipython
+    - gdown
+    - dill
+    - einops
+    - wandb
+    - pyrootutils
+    - rich

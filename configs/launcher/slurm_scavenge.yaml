@@ -1,0 +1,47 @@
+# @package _global_
+defaults:
+  - override /hydra/launcher: submitit_slurm
+  - _self_
+
+# hydra:
+#   launcher:
+#     _target_: hydra_plugins.hydra_submitit_launcher.submitit_launcher.SlurmLauncher
+#     partition: devlab
+#     timeout_min: 4320
+#     comment: null
+#     constraint: 'volta32gb'
+#     cpus_per_task: 80
+#     cpus_per_gpu: null
+#     exclude: null
+#     gpus_per_node: null
+#     gpus_per_task: 8
+#     tasks_per_node: 1
+#     max_num_timeout: 2
+#     mem_gb: 300
+#     mem_per_gpu: null
+#     mem_per_cpu: null
+#     nodes: 1
+#     name: ${task_name}
+#     signal_delay_s: 120
+#     additional_parameters: {}
+#     # array_parallelism: null
+#     setup: null
+
+
+hydra:
+  callbacks:
+    log_job_return:
+      _target_: hydra.experimental.callbacks.LogJobReturnCallback
+  launcher:
+    gpus_per_node: ${trainer.devices}
+    tasks_per_node: ${trainer.devices}
+    nodes: 1
+    cpus_per_task: 10
+    partition: scavenge
+    timeout_min: 4320
+    constraint: 'volta32gb'
+    name: ${task_name}
+    # partition: w3,learnaccel,devaccel
+    # mem_gb: 450
+    # timeout_min: ${datamodule.timeout_min}
+    # constraint: volta32gb

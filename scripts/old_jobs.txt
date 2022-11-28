@@ -1,0 +1,6418 @@
+
+# python src/train.py \
+# task_name=1010 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.decay_steps=[10,20] \
+# configs.test_batch_id=-1 \
+# trainer.accumulate_grad_batches=4 
+
+
+# python src/train.py \
+# task_name=1011 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.test_batch_id=-1 \
+# trainer.accumulate_grad_batches=4 \
+# configs.scheduler='cosine'
+
+
+# python src/train.py \
+# task_name=1012 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.test_batch_id=-1 \
+# trainer.accumulate_grad_batches=4 \
+# configs.scheduler='cosine' \
+# trainer.gradient_clip_val=10.0 
+
+
+# python src/train.py \
+# task_name=1013 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.test_batch_id=-1 \
+# configs.scheduler='cosine' \
+# trainer.accumulate_grad_batches=4 
+
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+# python src/train.py \
+# task_name=1014 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.test_batch_id=-1 \
+# configs.scheduler='cosine' \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# trainer.accumulate_grad_batches=4 
+
+# python src/train.py \
+# task_name=1015 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.test_batch_id=-1 \
+# configs.scheduler='cosine' \
+# configs.loss_type="action_bce" \
+# trainer.accumulate_grad_batches=4 
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+
+
+# python src/train.py \
+# task_name=1016 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.test_batch_id=-1 \
+# configs.scheduler='cosine' \
+# configs.loss_type="action_bce" \
+# configs.train_dataset="ava_train" \
+# trainer.accumulate_grad_batches=4 
+
+
+
+
+# python src/train.py \
+# task_name=1017 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.test_batch_id=-1 \
+# configs.scheduler='cosine' \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.frame_length=64 \
+# configs.bottle_neck="no-conv" \
+# trainer.accumulate_grad_batches=4 
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1040 \
+# configs.scheduler='cosine' \
+# trainer.accumulate_grad_batches=4 \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100
+
+
+# python src/train.py \
+# task_name=1041 \
+# configs.scheduler='cosine' \
+# trainer.accumulate_grad_batches=4 \
+# configs.warmup_epochs=15 \
+# trainer.max_epochs=100
+
+
+# python src/train.py \
+# task_name=1042 \
+# configs.scheduler='cosine' \
+# trainer.accumulate_grad_batches=4 \
+# configs.warmup_epochs=20 \
+# trainer.max_epochs=100
+
+
+# python src/train.py \
+# task_name=1043 \
+# trainer.accumulate_grad_batches=4 
+
+
+# python src/train.py \
+# task_name=1044 \
+# configs.scheduler='cosine' \
+# trainer.accumulate_grad_batches=8 \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100
+
+
+# python src/train.py \
+# task_name=1045 \
+# configs.scheduler='cosine' \
+# trainer.accumulate_grad_batches=4 \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100 \
+# configs.vit.dropout=0.3
+
+
+# python src/train.py \
+# task_name=1046 \
+# configs.scheduler='cosine' \
+# trainer.accumulate_grad_batches=4 \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100 \
+# configs.mask_ratio=0.8
+
+
+# python src/train.py \
+# task_name=1047 \
+# trainer.accumulate_grad_batches=4 \
+# configs.decay_steps=[15,25] 
+
+# python src/train.py \
+# task_name=1048 \
+# trainer.accumulate_grad_batches=4 \
+# configs.decay_steps=[20,30] 
+
+# python src/train.py \
+# task_name=1048 \
+# trainer.accumulate_grad_batches=8 \
+# configs.decay_steps=[20,30] 
+
+
+# Submitted batch job 64381804
+# Submitted batch job 64381826
+# Submitted batch job 64381828
+# Submitted batch job 64381829
+# Submitted batch job 64381830
+# Submitted batch job 64381846
+# Submitted batch job 64381847
+# Submitted batch job 64385509
+# Submitted batch job 64385511
+# Submitted batch job 64386322
+
+
+
+
+
+
+
+
+
+
+
+
+# # add pose+action
+# python src/train.py \
+# task_name=1053 \
+# trainer.accumulate_grad_batches=4 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.extra_feat=\'action\' \
+# configs.scheduler='cosine' \
+# configs.train_batch_size=64 \
+# configs.warmup_epochs=10 \
+# configs.action.en_dim=229
+
+# # concat pose+hmr
+# python src/train.py \
+# task_name=1054 \
+# trainer.accumulate_grad_batches=4 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.extra_feat=\'hmr\' \
+# configs.scheduler='cosine' \
+# configs.train_batch_size=64 \
+# configs.warmup_epochs=10
+
+# # add pose+hmr
+# python src/train.py \
+# task_name=1055 \
+# trainer.accumulate_grad_batches=4 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.extra_feat=\'hmr\' \
+# configs.scheduler='cosine' \
+# configs.train_batch_size=64 \
+# configs.warmup_epochs=10 \
+# configs.hmr.en_dim=229
+
+# Submitted batch job 64385474
+# Submitted batch job 64385950
+# Submitted batch job 64385951
+
+
+
+
+
+
+
+# python src/train.py \
+# train=True \
+# task_name=1001 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=4 \
+# configs.batch_size=32 \
+# configs.test_batch_id=-4
+
+
+# python src/train.py \
+# train=True \
+# task_name=1002 \
+# trainer.precision=16 \
+
+
+# python src/train.py \
+# train=True \
+# task_name=1003 \
+# configs.train_dataset=ava_train \
+# configs.test_batch_id=-10
+
+
+# python src/train.py \
+# train=True \
+# task_name=1004 \
+# configs.test_batch_id=-1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCK\' \
+# trainer.check_val_every_n_epoch=5 
+
+
+
+
+# python src/train.py \
+# task_name=1005 \
+# configs.test_batch_id=-1
+
+
+# python src/train.py \
+# task_name=1006 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.decay_steps=[10,20] \
+# configs.test_batch_id=-1
+
+
+# python src/train.py \
+# task_name=1007 \
+# configs.train_batch_size=128 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=128 \
+# configs.decay_steps=[10,20] \
+# configs.test_batch_id=-1
+
+
+# python src/train.py \
+# task_name=1008 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=4 \
+# configs.train_batch_size=32 \
+# configs.lr=0.004 \
+# configs.test_batch_id=-1 \
+# configs.decay_steps=[10,20] 
+
+
+# python src/train.py \
+# task_name=1009 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.decay_steps=[10,20] \
+# configs.test_batch_id=-1 \
+# configs.vit.depth=12 \
+# configs.vit.heads=16 \
+# configs.vit.mlp_dim=4096 
+
+
+
+
+# python src/train.py \
+# task_name=1010 \
+# configs.train_batch_size=64 \
+# configs.train_num_workers=64 \
+# configs.test_batch_size=64 \
+# configs.decay_steps=[10,20] \
+# configs.test_batch_id=-1 \
+# trainer.accumulate_grad_batches=4 \
+
+
+# # concat pose+appearance
+# python src/train.py \
+# task_name=1050 \
+# trainer.accumulate_grad_batches=4 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.extra_feat=\'appe\' \
+# configs.scheduler='cosine' \
+# configs.train_batch_size=64 \
+# configs.warmup_epochs=10
+
+
+# # add pose+appearance
+# python src/train.py \
+# task_name=1051 \
+# trainer.accumulate_grad_batches=4 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.extra_feat=\'appe\' \
+# configs.scheduler='cosine' \
+# configs.train_batch_size=64 \
+# configs.warmup_epochs=10 \
+# configs.appe.en_dim=229
+
+
+
+
+# # concat pose+action
+# python src/train.py \
+# task_name=1052 \
+# trainer.accumulate_grad_batches=4 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.extra_feat=\'action\' \
+# configs.scheduler='cosine' \
+# configs.train_batch_size=64 \
+# configs.warmup_epochs=10
+
+
+# # add pose+action
+# python src/train.py \
+# task_name=1053 \
+# trainer.accumulate_grad_batches=4 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.extra_feat=\'action\' \
+# configs.scheduler='cosine' \
+# configs.train_batch_size=64 \
+# configs.warmup_epochs=10 \
+# configs.action.en_dim=229
+
+
+
+
+# # concat pose+hmr
+# python src/train.py \
+# task_name=1054 \
+# trainer.accumulate_grad_batches=4 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.extra_feat=\'hmr\' \
+# configs.scheduler='cosine' \
+# configs.train_batch_size=64 \
+# configs.warmup_epochs=10
+
+
+# # add pose+hmr
+# python src/train.py \
+# task_name=1055 \
+# trainer.accumulate_grad_batches=4 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.extra_feat=\'hmr\' \
+# configs.scheduler='cosine' \
+# configs.train_batch_size=64 \
+# configs.warmup_epochs=10 \
+# configs.hmr.en_dim=229
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1051_test \
+# trainer.accumulate_grad_batches=4 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.extra_feat=\'\' \
+# configs.train_batch_size=64 \
+# configs.decay_steps=[10,20] \
+# configs.vit.dropout=0.4 \
+# configs.mask_ratio=0.8
+
+
+
+
+
+# python src/train.py \
+# task_name=1052_test \
+# ckpt_path=logs/1012/checkpoints/epoch_021.ckpt \
+# train=False 
+
+# python src/train.py \
+# task_name=1053_test \
+# configs.train_dataset=\'ava_val_\' \
+# configs.decay_steps=[10,20] \
+# configs.bottle_neck="no-conv" 
+# configs.extra_feat=\'action\' \
+# configs.action.en_dim=229 \
+# configs.use_mean_std_mid=False \
+# configs.loss_type=\'action_bce\' \
+# configs.render.enable=False
+
+# python src/train.py \
+# task_name=1054_test \
+# configs.train_dataset=\'ava_val_\' \
+# configs.decay_steps=[10,20] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.in_feat=80 \
+# configs.use_mean_std_mid=False \
+# configs.loss_type=\'action_BCE\' \
+# configs.render.enable=False \
+# configs.action.en_dim=80
+# # configs.action.en_dim=229 \
+# # configs.vit.depth=1 \
+# # configs.vit.heads=1 \
+# # configs.vit.mlp_dim=128 \
+# # configs.lr=0.0001 
+
+
+
+# python src/train.py \
+# task_name=1055_test \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.decay_steps=[10,20] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.in_feat=80 \
+# configs.use_mean_std_mid=False \
+# configs.loss_type=\'action_BCE\' \
+# configs.render.enable=False \
+# configs.action.en_dim=80 \
+# trainer.accumulate_grad_batches=4 \
+# # configs.action.en_dim=229 \
+# # configs.vit.depth=1 \
+# # configs.vit.heads=1 \
+# # configs.vit.mlp_dim=128 \
+# # configs.lr=0.0001 
+
+
+
+
+# python src/train.py \
+# task_name=1056_test \
+# configs.train_dataset=\'ava_train\' \
+# configs.decay_steps=[5,10] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.in_feat=80 \
+# configs.use_mean_std_mid=False \
+# configs.loss_type=\'action_BCE\' \
+# configs.render.enable=False \
+# configs.action.en_dim=80 \
+# trainer.accumulate_grad_batches=4 \
+
+
+
+# python src/train.py \
+# task_name=1057_test \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.decay_steps=[5,10] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.in_feat=80 \
+# configs.use_mean_std_mid=False \
+# configs.loss_type=\'action_BCE\' \
+# configs.render.enable=False \
+# configs.action.en_dim=80 \
+# trainer.accumulate_grad_batches=4 \
+
+
+
+
+# python src/train.py \
+# task_name=1058_test \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.decay_steps=[5,10] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.in_feat=80 \
+# configs.use_mean_std_mid=False \
+# configs.loss_type=\'action_BCE\' \
+# configs.render.enable=False \
+# configs.action.en_dim=80 \
+# trainer.accumulate_grad_batches=4 \
+
+
+
+
+# python src/train.py \
+# task_name=1059_test \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.use_mean_std_mid=False \
+# configs.loss_type=\'action_BCE\' \
+# configs.render.enable=False \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+# trainer.accumulate_grad_batches=4 \
+
+
+# python src/train.py \
+# task_name=1060_test \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.use_mean_std_mid=False \
+# configs.render.enable=False \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+# trainer.accumulate_grad_batches=4 \
+
+
+
+# python src/train.py \
+# task_name=1061_test \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.use_mean_std_mid=False \
+# configs.render.enable=False \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+# trainer.accumulate_grad_batches=4 \
+
+# python src/train.py \
+# task_name=1062_test \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.use_mean_std_mid=False \
+# configs.render.enable=False \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+# trainer.accumulate_grad_batches=4 \
+
+
+
+python src/train.py \
+task_name=1063_test \
+configs.train_dataset=\'ava_train,kinetics_train\' \
+configs.decay_steps=[15,25] \
+configs.bottle_neck="no-conv" \
+configs.extra_feat=\'action\' \
+configs.use_mean_std_mid=False \
+configs.render.enable=False \
+configs.in_feat=229 \
+configs.action.en_dim=229 \
+trainer.accumulate_grad_batches=4 
+
+##############################################################################################
+### for testing
+##############################################################################################
+
+
+# params1=(1047 1003)
+# for i1 in {0..0}; do
+# python src/train.py \
+# train=False \
+# task_name=${params1[i1]}_3_test \
+# ckpt_path=logs/${params1[i1]}/checkpoints/epoch_016.ckpt \
+# configs.number_of_processes=25 \
+# configs.test_batch_id=0 \
+# configs.full_seq_render=False \
+# configs.test_type=\'track.fullframe"|"avg.30\' \
+# configs.use_mean_std_mid=True
+# done
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1100 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\'
+
+# python src/train.py \
+# task_name=1101 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=10 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\'
+
+# python src/train.py \
+# task_name=1102 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=15 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' 
+
+# python src/train.py \
+# task_name=1103 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=20 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' 
+
+# python src/train.py \
+# task_name=1104 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' 
+
+# python src/train.py \
+# task_name=1105 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.bottle_neck="tonly" \
+# configs.frame_length=100 \
+# configs.ava.sampling_factor=2 \
+
+# Submitted batch job 64475928 x
+# Submitted batch job 64475935 x
+# Submitted batch job 64475936 x
+# Submitted batch job 64475938 x
+# Submitted batch job 64475939 x
+# Submitted batch job 64499167 x
+
+
+
+# python src/train.py \
+# task_name=1111 \
+# configs.decay_steps=[15,25] \
+# configs.ava.sampling_factor=2
+
+# python src/train.py \
+# task_name=1112 \
+# configs.decay_steps=[15,25] \
+# configs.vit.dim_head=128
+
+# python src/train.py \
+# task_name=1113 \
+# configs.decay_steps=[15,25] \
+# configs.vit.dim_head=256
+
+# Submitted batch job 64475943 x
+# Submitted batch job 64475949 x
+# Submitted batch job 64475951 x
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1114 \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="tonly" \
+# configs.frame_length=100 \
+# configs.ava.sampling_factor=2 \
+
+# Submitted batch job 64499168 x
+
+
+
+# python src/train.py \
+# task_name=1117 \
+# configs.decay_steps=[15,25] \
+# configs.loss_type=\'pose_l2,loca_l1,action_FOC\' \
+# configs.loss.focal.alpha=0.25 \
+# configs.loss.focal.gamma=4.0 \
+
+# python src/train.py \
+# task_name=1118 \
+# configs.decay_steps=[15,25] \
+# configs.loss_type=\'pose_l2,loca_l1,action_FOC\' \
+# configs.loss.focal.alpha=0.25 \
+# configs.loss.focal.gamma=5.0 \
+
+# Submitted batch job 64506465 x
+# Submitted batch job 64506467 x
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1115 \
+# configs.decay_steps=[15,25] \
+# configs.loss_type=\'pose_l2,loca_l1,action_FOC\' \
+# configs.loss.focal.alpha=0.25 \
+# configs.loss.focal.gamma=2.0 \
+
+
+# python src/train.py \
+# task_name=1116 \
+# configs.decay_steps=[15,25] \
+# configs.loss_type=\'pose_l2,loca_l1,action_FOC\' \
+# configs.loss.focal.alpha=0.25 \
+# configs.loss.focal.gamma=3.0 \
+
+
+# Submitted batch job 64506462
+# Submitted batch job 64506463 
+
+
+
+
+
+# python src/train.py \
+# task_name=1120 \
+# configs.decay_steps=[15,25] \
+# configs.loss_type=\'pose_l2,loca_l1,action_FOC\' \
+# configs.loss.focal.alpha=0.25 \
+# configs.loss.focal.gamma=0.5 \
+
+
+# python src/train.py \
+# task_name=1121 \
+# configs.decay_steps=[15,25] \
+# configs.loss_type=\'pose_l2,loca_l1,action_FOC\' \
+# configs.loss.focal.alpha=0.25 \
+# configs.loss.focal.gamma=-0.5 \
+
+# Submitted batch job 64548127
+# Submitted batch job 64548128
+
+
+
+# # with objects
+# python src/train.py \
+# task_name=1122 \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="t2only" \
+# configs.extra_feat=\'appe\' \
+# configs.in_feat=229 \
+# configs.appe.en_dim=229
+
+# Submitted batch job 64551857
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1060_test \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.use_mean_std_mid=False \
+# configs.render.enable=False \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+# trainer.accumulate_grad_batches=4 \
+
+
+
+# python src/train.py \
+# task_name=1061_test \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.use_mean_std_mid=False \
+# configs.render.enable=False \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+# trainer.accumulate_grad_batches=4 \
+
+# python src/train.py \
+# task_name=1062_test \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.use_mean_std_mid=False \
+# configs.render.enable=False \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+# trainer.accumulate_grad_batches=4 \
+
+
+# nxn cross attention
+# python src/train.py \
+# task_name=1063_test \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="no-conv" \
+# configs.extra_feat=\'action\' \
+# configs.use_mean_std_mid=False \
+# configs.render.enable=False \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+# trainer.accumulate_grad_batches=4 
+
+
+# nxn//10 cross attention
+# python src/train.py \
+# task_name=1064_test \
+# configs.decay_steps=[15,25] \
+# configs.extra_feat=\'action\' \
+# configs.bottle_neck="no-conv" \
+# configs.render.enable=False \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+# configs.ava.sampling_factor=2 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+# python src/train.py \
+# task_name=1065_test \
+# configs.decay_steps=[15,25] \
+# configs.frame_length=100 \
+# configs.extra_feat=\'action\' \
+# configs.bottle_neck="no-conv" \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+
+
+# python src/train.py \
+# task_name=1066_test \
+# configs.decay_steps=[15,25] \
+# configs.frame_length=150 \
+# configs.extra_feat=\'action\' \
+# configs.bottle_neck="no-conv" \
+# configs.in_feat=229 \
+# configs.action.en_dim=229 \
+
+
+# # with objects
+python src/train.py \
+task_name=1069_test \
+configs.decay_steps=[15,25] 
+# configs.bottle_neck="t2only" \
+# configs.extra_feat=\'appe\' \
+# configs.in_feat=229 \
+# configs.appe.en_dim=229
+# callbacks.rich_progress_bar.refresh_rate=0 \
+# ckpt_path=logs/1068_test/checkpoints/last.ckpt \
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1221 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="t2only" \
+# configs.frame_length=50 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1222 \
+# ckpt_path="logs/1222/checkpoints/last.ckpt" \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.decay_steps=[15,25] \
+# configs.render.enable=True \
+# configs.bottle_neck="t2only" \
+# configs.frame_length=50 \
+# configs.mask_ratio=0.3 \
+# # configs.vit.depth=16 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1223 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=10 \
+# configs.bottle_neck="t2only" \
+# configs.frame_length=50 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1224 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="t2only" \
+# configs.frame_length=50 \
+# configs.weight_decay=5e-4 \
+# configs.lr=1e-4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1225 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="t3only" \
+# configs.frame_length=50 \
+# configs.loss_type=\'pose_l2,loca_l1\' \
+# configs.compute_map=False \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1226 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="t3only" \
+# configs.frame_length=50 \
+# configs.loss_type="action_BCE" \
+# # configs.compute_map=False \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1227 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.decay_steps=[15,25] \
+# configs.bottle_neck="t2only" \
+# configs.frame_length=50 \
+# configs.mask_ratio=0.8 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+# python src/train.py \
+# task_name=1229 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="t3only" \
+# configs.frame_length=50 \
+# configs.weight_decay=5e-4 \
+# configs.vit.depth=12 \
+# configs.vit.heads=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# # configs.train_batch_size= \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# params=(1240 1241 1242 1243 1244)
+# values=(1 3 5 7 9)
+# python src/train.py \
+# task_name=${params[$SLURM_ARRAY_TASK_ID]} \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=$((100/values[$SLURM_ARRAY_TASK_ID]*values[$SLURM_ARRAY_TASK_ID])) \
+# configs.weight_decay=5e-4 \
+# configs.vit.conv.stride=${values[$SLURM_ARRAY_TASK_ID]} \
+# # Submitted batch job 64700725
+
+
+
+# params=(1250 1251 1252 1253 1254)
+# values=(0.1 0.2 0.3 0.4 0.5)
+# python src/train.py \
+# task_name=${params[$SLURM_ARRAY_TASK_ID]} \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=100 \
+# configs.weight_decay=5e-4 \
+# configs.vit.conv.stride=5 \
+# configs.vit.dropout=${values[$SLURM_ARRAY_TASK_ID]} \
+# # Submitted batch job 64703599
+
+
+# params=(1260 1261 1262 1263 1264)
+# values=(0.1 0.2 0.3 0.4 0.5)
+# python src/train.py \
+# task_name=${params[$SLURM_ARRAY_TASK_ID]} \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=100 \
+# configs.weight_decay=5e-4 \
+# configs.vit.conv.stride=5 \
+# configs.vit.emb_dropout=${values[$SLURM_ARRAY_TASK_ID]} \
+# # Submitted batch job 64703607
+
+
+# params=(1270 1271 1272 1273 1274)
+# values=(0.9 0.8 0.7 0.6 0.5)
+# python src/train.py \
+# task_name=${params[$SLURM_ARRAY_TASK_ID]} \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=100 \
+# configs.weight_decay=5e-4 \
+# configs.vit.conv.stride=5 \
+# configs.mask_ratio=${values[$SLURM_ARRAY_TASK_ID]} \
+# # Submitted batch job 64703680
+
+
+# params=(1280 1281 1282 1283 1284)
+# values=(1e-4 5e-4 1e-3 5e-3 1e-2)
+# python src/train.py \
+# task_name=${params[$SLURM_ARRAY_TASK_ID]} \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=100 \
+# configs.weight_decay=5e-4 \
+# configs.vit.conv.stride=5 \
+# configs.mask_ratio=0.6 \
+# configs.lr=${values[$SLURM_ARRAY_TASK_ID]} \
+# # Submitted batch job 64703717
+
+
+# params=(1290 1291 1292 1293 1294)
+# values=(16 17 18 19 20)
+# python src/train.py \
+# task_name=${params[$SLURM_ARRAY_TASK_ID]} \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=100 \
+# configs.weight_decay=5e-4 \
+# configs.vit.conv.stride=5 \
+# configs.mask_ratio=0.6 \
+# configs.decay_steps=[${values[$SLURM_ARRAY_TASK_ID]}] \
+# # # Submitted batch job 64703730
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1248 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=150 \
+# configs.weight_decay=5e-4 \
+# configs.lr=1e-3 \
+# configs.train_batch_size=32 \
+# configs.test_batch_size=32 \
+# configs.vit.depth=12 \
+# # trainer.strategy=ddp \
+# # trainer.sync_batchnorm=True \
+# # trainer.devices=4 \
+# # callbacks.model_checkpoint.monitor="step" \
+# # callbacks.model_checkpoint.mode="max" \
+# # callbacks.model_checkpoint.save_top_k=-1 \
+# # configs.render.enable=False \
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+# python src/train.py \
+# task_name=1249 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=150 \
+# configs.weight_decay=5e-4 \
+# configs.train_batch_size=32 \
+# configs.test_batch_size=32 \
+# configs.lr=4e-3 \
+# configs.vit.depth=12 \
+# # trainer.strategy=ddp \
+# # trainer.sync_batchnorm=True \
+# # trainer.devices=4 \
+# # trainer.num_nodes=1 \
+# # trainer.precision=16 \
+# # callbacks.model_checkpoint.monitor="step" \
+# # callbacks.model_checkpoint.mode="max" \
+# # callbacks.model_checkpoint.save_top_k=-1 \
+# # configs.render.enable=False \
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1247 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv2" \
+# configs.frame_length=150 \
+# configs.weight_decay=5e-4 \
+# configs.train_batch_size=32 \
+# configs.test_batch_size=32 \
+# configs.lr=4e-3 \
+# configs.vit.depth=12 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+# python src/train.py \
+# task_name=1246 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv2" \
+# configs.mask_type="random_x" \
+# configs.frame_length=100 \
+# configs.weight_decay=5e-4 \
+# configs.train_batch_size=64 \
+# configs.test_batch_size=64 \
+# configs.lr=1e-3 \
+# configs.vit.depth=12 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1245 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.mask_type="random_x" \
+# configs.frame_length=50 \
+# configs.weight_decay=5e-4 \
+# configs.train_batch_size=64 \
+# configs.test_batch_size=64 \
+# configs.lr=1e-3 \
+# # configs.vit.depth=12 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+# python src/train.py \
+# task_name=1245_A \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.mask_type="random_y" \
+# configs.frame_length=50 \
+# configs.weight_decay=5e-4 \
+# configs.train_batch_size=64 \
+# configs.test_batch_size=64 \
+# configs.lr=1e-3 \
+# # configs.vit.depth=12 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+python src/train.py \
+task_name=1245_C \
+launcher=slurm \
+configs.train_dataset=\'ava_train,kinetics_train\' \
+configs.action_space="ava" \
+configs.bottle_neck="conv" \
+configs.mask_type="random_y" \
+configs.frame_length=99 \
+configs.vit.conv.stride=9 \
+configs.mask_ratio=0.8 \
+configs.weight_decay=5e-4 \
+configs.train_batch_size=64 \
+configs.test_batch_size=64 \
+configs.lr=1e-4 \
+configs.decay_steps=[30] \
+# configs.vit.depth=12 \
+# callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1208_test \
+# ckpt_path="logs/1207/checkpoints/last.ckpt" \
+# train=False \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.test_dataset=\'ava_rend_\' \
+# configs.action_space="ava" \
+# configs.render.enable=True \
+# configs.render.background=False \
+# configs.render.texture=True \
+# configs.render.engine="NMR" \
+# configs.bottle_neck="conv" \
+# configs.extra_feat="appe" \
+# configs.frame_length=50 \
+# configs.test_batch_id=-1 \
+# configs.full_seq_render=True \
+# configs.number_of_processes=100 \
+# configs.render.num_videos=100000 \
+# configs.compute_map=False \
+# configs.test_num_workers=1 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+# python src/train.py \
+# task_name=1209_test \
+# ckpt_path="logs/1207/checkpoints/last.ckpt" \
+# train=False \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.test_dataset=\'ava_rend_\' \
+# configs.action_space="ava" \
+# configs.render.enable=True \
+# configs.render.background=False \
+# configs.render.texture=True \
+# configs.render.engine="NMR" \
+# configs.bottle_neck="conv" \
+# configs.extra_feat="appe" \
+# configs.frame_length=50 \
+# configs.test_batch_id=-1 \
+# configs.full_seq_render=True \
+# configs.number_of_processes=100 \
+# configs.render.num_videos=100000 \
+# configs.compute_map=False \
+# configs.test_num_workers=1 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+
+
+
+
+
+# actions, action_map   = read_ava_pkl("../BERT_person/_TMP/950_0_test.pkl") #90, 0.7
+# actions, action_map   = read_ava_pkl("_TMP/961_31_test_0.7_1.pkl") #64, 0.8
+
+# actions, action_map = read_ava_pkl("../BERT_person/_TMP/961_6_test.pkl")   # 10.67, full sequence, 30
+# actions_, action_map_ = read_ava_pkl("../BERT_person/_TMP/975_base_11_test_0.7_1.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/975_base_15_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/975_base_15_test_0.82_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/975_base_16_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("../BERT_person/_TMP/975_base_14_test_0.7_1.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/975_base_30_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/975_base_32_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/975_base_33_test_0.7_1.0.pkl")   
+
+# actions_, action_map_ = read_ava_pkl("_TMP/1001_2_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1001_3_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1001_4_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1001_5_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1001_6_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1001_7_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1002_1_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1003_1_test_0.7_1.0.pkl")   
+
+# actions_, action_map_ = read_ava_pkl("logs/1006/results/10.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1006_1_test_0.7_1.0.pkl")   
+
+# actions_, action_map_ = read_ava_pkl("logs/1007/results/11.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1007_1_test_0.7_1.0.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1007_2_test_0.7_1.0.pkl")   
+
+# actions_, action_map_ = read_ava_pkl("logs/1009/results/5.pkl")   
+
+# actions, action_map = read_ava_pkl("logs/1010/results/11.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1010_10_test_0.7_1.0.pkl")   
+# actions, action_map = read_ava_pkl("_TMP/1010_10_test_0.7_1.0.pkl")   
+
+# actions_, action_map_ = read_ava_pkl("logs/1012/results/21.pkl")   
+
+# actions_, action_map_ = read_ava_pkl("_TMP/logs/1015/results/11.pkl")
+
+# actions_, action_map_ = read_ava_pkl("logs/1047/results/15.pkl")   
+# actions_, action_map_ = read_ava_pkl("_TMP/1047_3_test_0.7_1.0.pkl")   
+
+# actions_, action_map_ = read_ava_pkl("logs/1048/results/5.pkl")   
+# actions_, action_map_ = read_ava_pkl("logs/1054/results/28.pkl")   
+# actions_, action_map_ = read_ava_pkl("logs/1055/results/14.pkl")   
+
+
+#### Fusion models
+# actions_, action_map_ = read_ava_pkl("logs/1060_test/results/6.pkl")  # late with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1061_test/results/3.pkl")  # mid with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1062_test/results/2.pkl")  # cross with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1063_test/results/1.pkl")  # cross with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1064_test/results/18.pkl")  # cross with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1065_test/results/16.pkl")  # cross with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1066_test/results/1.pkl")  # cross with APL loss
+
+
+#### Focal loss
+# actions_, action_map_ = read_ava_pkl("logs/1110/results/18.pkl")  # late with APL loss
+
+#### tonly
+# actions_, action_map_ = read_ava_pkl("logs/1223/results/0.pkl")  # late with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1207/results/15.pkl")  # late with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1242/results/10.pkl")  # late with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1244/results/12.pkl")  # late with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1248/results/5.pkl")  # late with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1274/results/3.pkl")  # late with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1232/results/8.pkl")  # late with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1290/results/17.pkl")  # late with APL loss
+# actions_, action_map_ = read_ava_pkl("logs/1292/results/10.pkl")  # late with APL loss
+
+
+
+# new baselines
+# actions_, action_map_ = read_ava_pkl("logs/1300/results/9.pkl")  # late with APL loss
+
+
+
+
+
+
+
+
+
+
+# python src/train.py -m \
+# hydra/launcher=submitit_slurm \
+# launcher=slurm \
+# task_name=1300x \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'kinetics_train\' \
+# configs.kinetics.sampling_factor=10 \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv2" \
+# configs.extra_feat.enable="hmr" \
+# configs.extra_feat.hmr.en_dim=229 \
+# configs.loss_type=\'pose_l2,loca_l1,kp_l1,action_BCE\' \
+# configs.render.enable=True \
+# configs.frame_length=50,100 \
+# configs.test_batch_id=-1 \
+# configs.full_seq_render=False \
+# configs.render.num_videos=10 \
+# configs.compute_map=False \
+# trainer.gradient_clip_val=2.0 \
+# # trainer.precision=16 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1300y \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv2" \
+# configs.extra_feat.enable="hmr" \
+# configs.extra_feat.hmr.en_dim=229 \
+# configs.loss_type=\'pose_l2,loca_l1,kp_l1,action_BCE\' \
+# configs.render.enable=True \
+# configs.frame_length=50 \
+# configs.test_batch_id=-1 \
+# configs.full_seq_render=False \
+# configs.render.num_videos=10 \
+# configs.compute_map=False \
+# trainer.gradient_clip_val=2.0 \
+# # trainer.precision=16 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1300z \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+
+
+# python src/train.py \
+# task_name=1320z \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable="hmr" \
+# configs.extra_feat.hmr.en_dim=229 \
+# configs.render.enable=False \
+# configs.train_num_workers=32 \
+# configs.test_num_workers=32 \
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+# # configs.test_batch_sizxe=32 \
+# # trainer.max_epochs=2 \
+# # +trainer.profiler="advanced" \
+
+
+# python src/train.py \
+# task_name=1330z \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable="objects" \
+# configs.extra_feat.objects.en_dim=229 \
+# configs.render.enable=False \
+# configs.train_num_workers=32 \
+# configs.test_num_workers=32 \
+
+# python src/train.py \
+# task_name=1340z \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable="clip" \
+# configs.extra_feat.clip.en_dim=229 \
+# configs.render.enable=False \
+# configs.train_num_workers=32 \
+# configs.test_num_workers=8 \
+
+
+# python src/train.py \
+# task_name=1350z \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable="appe" \
+# configs.extra_feat.appe.en_dim=229 \
+# configs.render.enable=False \
+# configs.train_num_workers=32 \
+# configs.test_num_workers=8 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1300r \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'kinetics_val\' \
+# configs.action_space="kinetics" \
+# configs.bottle_neck="conv2" \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_CE\' \
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+# python src/train.py \
+# task_name=1300q \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'kinetics_val\' \
+# configs.action_space="kinetics" \
+# configs.bottle_neck="conv3" \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_CE\' \
+# # trainer.limit_train_batches=100 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1400 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+
+
+# python src/train.py \
+# task_name=1410 \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable="objects" \
+# configs.extra_feat.objects.en_dim=229 \
+
+
+# python src/train.py \
+# task_name=1420 \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'kinetics_val\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=False \
+# configs.action_space="kinetics" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_CE\' \
+
+
+# python src/train.py \
+# task_name=1430 \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'kinetics_val\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=False \
+# configs.action_space="kinetics" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1\' \
+
+
+# python src/train.py \
+# task_name=1440 \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'kinetics_val\' \
+# configs.bottle_neck="conv3" \
+# configs.compute_map=False \
+# configs.action_space="kinetics" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_CE\' \
+
+
+# python src/train.py \
+# task_name=1450 \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'kinetics_val\' \
+# configs.bottle_neck="conv3" \
+# configs.compute_map=False \
+# configs.action_space="kinetics" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1\' \
+
+
+# python src/train.py \
+# task_name=1460 \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'kinetics_val\' \
+# configs.bottle_neck="conv3" \
+# configs.compute_map=False \
+# configs.action_space="kinetics" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_CE\' \
+# configs.extra_feat.enable="clip" \
+# configs.extra_feat.clip.en_dim=229 \
+
+
+# python src/train.py \
+# task_name=1470 \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'kinetics_val\' \
+# configs.bottle_neck="conv3" \
+# configs.compute_map=False \
+# configs.action_space="kinetics" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_CE\' \
+# configs.extra_feat.enable="objects" \
+# configs.extra_feat.objects.en_dim=229 \
+
+
+# python src/train.py \
+# task_name=1480 \
+# configs.train_dataset=\'kinetics_train\' \
+# configs.test_dataset=\'kinetics_val\' \
+# configs.bottle_neck="conv3" \
+# configs.compute_map=False \
+# configs.action_space="kinetics" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_CE\' \
+# configs.extra_feat.enable="hmr" \
+# configs.extra_feat.hmr.en_dim=229 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+############################################################################################################
+
+
+# python src/train.py \
+# task_name=1510 \
+# configs.train_dataset=\'ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=229 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+
+
+
+# python src/train.py \
+# task_name=1520 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=300 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=229 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1530 \
+# configs.train_dataset=\'ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=16 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=229 \
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1540 \
+# configs.train_dataset=\'ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=True \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=229 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+
+
+
+# python src/train.py \
+# task_name=1550 \
+# configs.train_dataset=\'ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=True \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1600 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2x" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1610 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+
+
+
+
+# python src/train.py \
+# ckpt_path="logs/1620/checkpoints/last.ckpt" \
+# task_name=1620 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.in_feat=229 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1650 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2x" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=8 \
+# trainer.max_epochs=30 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+
+
+# python src/train.py \
+# task_name=1660 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=8 \
+# trainer.max_epochs=30 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1700 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=8 \
+# trainer.max_epochs=30 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1710 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=8 \
+# trainer.max_epochs=30 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+
+# python src/train.py \
+# task_name=1720 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=8 \
+# trainer.max_epochs=30 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+
+
+# python src/train.py \
+# task_name=1721 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.solver='SGD' \
+# configs.weight_decay=1e-8 \
+# configs.lr=4.8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=8 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+
+# python src/train.py \
+# task_name=1731 \
+# configs.train_dataset=\'ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=8 \
+# trainer.max_epochs=30 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+# python src/train.py \
+# task_name=1740 \
+# configs.train_dataset=\'ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2x" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=8 \
+# trainer.max_epochs=30 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+# python src/train.py \
+# task_name=1741 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2x" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=8 \
+# trainer.max_epochs=30 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1750 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'action,clip,objects\' \
+# configs.extra_feat.action.en_dim=256 \
+# configs.extra_feat.clip.en_dim=256 \
+# configs.extra_feat.objects.en_dim=256 \
+# configs.solver='SGD' \
+# configs.weight_decay=1e-8 \
+# configs.lr=4.8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+# python src/train.py \
+# task_name=1751 \
+# configs.train_dataset=\'kinetics_train,ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.bottle_neck="conv2y" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.train_batch_size=32 \
+# configs.train_num_workers=32 \
+# configs.test_batch_size=32 \
+# configs.test_num_workers=32 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'action\' \
+# configs.extra_feat.action.en_dim=256 \
+# configs.extra_feat.clip.en_dim=256 \
+# configs.extra_feat.objects.en_dim=256 \
+# configs.solver='SGD' \
+# configs.weight_decay=1e-8 \
+# configs.lr=4.8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1740_test \
+# ckpt_path="logs/1740/checkpoints/last.ckpt" \
+# train=False \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.test_type="track.fullframe|avg.1" \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=32 \
+# configs.test_num_workers=16 \
+
+
+
+
+# python src/train.py \
+# task_name=1720_f4 \
+# configs.finetune=True \
+# configs.wights_path="logs/1710/checkpoints/last.ckpt" \
+# configs.train_dataset=\'ava_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.ava.use_gt_only=True \
+# configs.bottle_neck="conv2" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable="action" \
+# configs.extra_feat.action.en_dim=256 \
+# configs.test_type="track.fullframe|avg.30" \
+# configs.solver='SGD' \
+# configs.weight_decay=1e-8 \
+# configs.lr=4.8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=8 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# # +trainer.val_check_interval=1000 \
+# # configs.train_batch_size=32 \
+# # configs.train_num_workers=16 \
+# # configs.test_batch_size=32 \
+# # configs.test_num_workers=16 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1800 \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2y" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="pseduo_gt" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_kl_l2\' \
+# configs.extra_feat.enable=\'action\' \
+# configs.extra_feat.action.en_dim=256 \
+# configs.weight_decay=1e-8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1801 \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="pseduo_gt" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_kl_l2\' \
+# configs.extra_feat.enable=\'action\' \
+# configs.extra_feat.action.en_dim=256 \
+# configs.weight_decay=1e-8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1802 \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="both" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'action\' \
+# configs.extra_feat.action.en_dim=256 \
+# configs.weight_decay=1e-8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+# python src/train.py \
+# task_name=1802a \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_kl_l2\' \
+# configs.extra_feat.enable=\'action\' \
+# configs.extra_feat.action.en_dim=256 \
+# configs.weight_decay=1e-8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1803 \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="gt" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=1e-8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=1024 \
+# configs.vit.dim_head=128 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+# python src/train.py \
+# task_name=1810 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_kl_l2\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=1e-8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1811 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="both" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_kl_l2\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=1e-8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1812 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=1e-8 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1813 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1813a \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=5e-3 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1813b \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1814a \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1815 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1816 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.ava.head_dropout=0.0 \
+# configs.weight_decay=5e-3 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1817 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.ava.head_dropout=0.0 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1820 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.in_feat=485 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1821 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.in_feat=485 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.8 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1822 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit,vitpose\' \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.in_feat=741 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1900 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=True \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=229 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1901 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=2 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=229 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # trainer.limit_train_batches=1 \
+# # trainer.limit_val_batches=1 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1902 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=5 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=229 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # trainer.limit_train_batches=1 \
+# # trainer.limit_val_batches=1 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1910 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=True \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1911 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=True \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1912 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv2p" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=True \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="cosine" \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1914 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1915 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# +trainer.val_check_interval=1000 \
+# # trainer.limit_train_batches=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# task_name=1916 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1923 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+# python src/train.py \
+# task_name=1926 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.vit.dropout=0.4 \
+# configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+# # Submitted batch job 65228870
+# python src/train.py \
+# task_name=1933 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_FOC\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.solver='SGD' \
+# configs.lr=0.1 \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=0.5 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# configs.train_batch_size=32 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=32 \
+# configs.test_num_workers=8 \
+# # trainer.strategy=ddp \
+# # trainer.sync_batchnorm=True \
+# # trainer.devices=8 \
+# # trainer.num_nodes=1 \
+# # callbacks.model_checkpoint.monitor="step" \
+# # callbacks.model_checkpoint.mode="max" \
+# # callbacks.model_checkpoint.save_top_k=-1 \
+# # configs.vit.mlp_dim=512 \
+# # configs.vit.dim_head=64 \
+# # configs.vit.dropout=0.4 \
+# # configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1936 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# # configs.vit.mlp_dim=512 \
+# # configs.vit.dim_head=64 \
+# # configs.vit.dropout=0.4 \
+# # configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+# python src/train.py \
+# train=False \
+# task_name=1937_test \
+# ckpt_path="logs/1937/checkpoints/last.ckpt" \
+# configs.mask_type_test='null' \
+# trainer.check_val_every_n_epoch=1000 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=2 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# callbacks.model_checkpoint.save_on_train_epoch_end=True \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.mlp_dim=512 \
+# # configs.vit.dim_head=64 \
+# # configs.vit.dropout=0.4 \
+# # configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+
+
+
+
+
+
+
+
+# python src/train.py \
+# train=False \
+# task_name=1946_test \
+# ckpt_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# configs.test_type="track.fullframe|" \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# # configs.vit.mlp_dim=512 \
+# # configs.vit.dim_head=64 \
+# # configs.vit.dropout=0.4 \
+# # configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+# # configs.mask_type_test='null' \
+# python src/train.py \
+# train=False \
+# task_name=1947_test \
+# ckpt_path="logs/1947/checkpoints/last.ckpt" \
+# trainer.check_val_every_n_epoch=1000 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=2 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# callbacks.model_checkpoint.save_on_train_epoch_end=True \
+# # configs.vit.mlp_dim=512 \
+# # configs.vit.dim_head=64 \
+# # configs.vit.dropout=0.4 \
+# # configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1948 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv_1" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=2 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# callbacks.model_checkpoint.save_on_train_epoch_end=True \
+# # configs.vit.mlp_dim=512 \
+# # configs.vit.dim_head=64 \
+# # configs.vit.dropout=0.4 \
+# # configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1949 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.in_feat=512 \
+# configs.lr=0.0001 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# callbacks.model_checkpoint.save_on_train_epoch_end=True \
+# # +trainer.val_check_interval=1000 \
+# # configs.vit.mlp_dim=512 \
+# # configs.vit.dim_head=64 \
+# # configs.vit.dropout=0.4 \
+# # configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1950 \
+# trainer.check_val_every_n_epoch=1 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'vitpose,mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.vitpose.en_dim=256 \
+# configs.in_feat=768 \
+# configs.lr=0.001 \
+# configs.weight_decay=5e-4 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# callbacks.model_checkpoint.save_on_train_epoch_end=True \
+# # +trainer.val_check_interval=1000 \
+# # configs.vit.mlp_dim=512 \
+# # configs.vit.dim_head=64 \
+# # configs.vit.dropout=0.4 \
+# # configs.vit.emb_dropout=0.4 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+# python src/train.py -m \
+# +seed=1,2 \
+# hydra/launcher=submitit_slurm \
+# launcher=slurm \
+# trainer=ddp \
+# task_name=1952 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=128 \
+# configs.extra_feat.pose_shape.en_dim=64 \
+# configs.in_feat=320 \
+# configs.lr=0.01 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+
+
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1959 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'vitpose,mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=128 \
+# configs.extra_feat.pose_shape.en_dim=64 \
+# configs.extra_feat.vitpose.mid_dim=64 \
+# configs.extra_feat.vitpose.en_dim=64 \
+# configs.in_feat=384 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+
+
+
+
+
+# # versions of 1812 to minimize overfitting
+# python src/train.py \
+# train=False \
+# ckpt_path="logs/1813b/checkpoints/epoch_002.ckpt" \
+# task_name=1813b_test \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.test_type="track.fullframe|" \
+# # configs.vit.dropout=0.4 \
+# # configs.vit.emb_dropout=0.4 \
+# # configs.mask_type_test="null" \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_train_batches=100 \
+# # trainer.limit_val_batches=100 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# params1=(1 3 5 10 15 20 30)
+
+# for i1 in {0..6}; do
+# python src/train.py \
+# train=False \
+# ckpt_path="logs/1813b/checkpoints/epoch_002.ckpt" \
+# task_name=1813b_test_${params1[i1]} \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv2" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.frame_length=125 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.action.en_dim=1024 \
+# configs.in_feat=1253 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# configs.vit.mlp_dim=512 \
+# configs.vit.dim_head=64 \
+# configs.test_type="track.fullframe|avg.${params1[i1]}" 
+# done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1958 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1960 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1961 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1961a \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1961b \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|avg.30" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+# # ckpt_path="logs/1962a/checkpoints/epoch_001.ckpt" \
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962c \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962b \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+# # ckpt_path="logs/1962a/checkpoints/epoch_001.ckpt" \
+# # configs.ava.predict_valid=True \
+# python src/train.py \
+# configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# trainer=ddp \
+# task_name=1962d \
+# configs.finetune=True \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="gt" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+
+# # ckpt_path="logs/1962a/checkpoints/epoch_001.ckpt" \
+# # configs.ava.predict_valid=True \
+# python src/train.py \
+# configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# trainer=ddp \
+# task_name=1962e \
+# configs.finetune=True \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="gt" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# +trainer.val_check_interval=1000 \
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962f \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="gt" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962g \
+# configs.lr=1e-4 \
+# configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="gt" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962i \
+# configs.lr=1e-3 \
+# configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962j \
+# configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962k \
+# configs.lr=1e-3 \
+# configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962l \
+# configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+# # configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962m \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit,objects,vitpose\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=128 \
+# configs.extra_feat.pose_shape.en_dim=64 \
+# configs.extra_feat.objects.mid_dim=64 \
+# configs.extra_feat.objects.en_dim=32 \
+# configs.extra_feat.vitpose.mid_dim=64 \
+# configs.extra_feat.vitpose.en_dim=32 \
+# configs.in_feat=384 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+
+
+
+
+
+# # configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# python src/train.py -m \
+# +seed=1,2 \
+# hydra/launcher=submitit_slurm \
+# launcher=slurm \
+# trainer=ddp \
+# task_name=1963m \
+# ckpt_path="logs/1963m/checkpoints/last.ckpt" \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit,objects,vitpose\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=128 \
+# configs.extra_feat.pose_shape.en_dim=64 \
+# configs.extra_feat.objects.mid_dim=64 \
+# configs.extra_feat.objects.en_dim=32 \
+# configs.extra_feat.vitpose.mid_dim=64 \
+# configs.extra_feat.vitpose.en_dim=32 \
+# configs.in_feat=384 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+# # configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# python src/train.py -m \
+# +seed=1,2 \
+# hydra/launcher=submitit_slurm \
+# launcher=slurm \
+# trainer=ddp \
+# task_name=1963l \
+# configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+# python src/train.py -m \
+# hydra/launcher=submitit_slurm \
+# launcher=slurm \
+# trainer=ddp \
+# task_name=1963c \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all,both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2,5e-4,5e-6 \
+# trainer.gradient_clip_val=2.0,5.0,10.0 \
+# configs.lr=1e-3 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1963j \
+# configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# configs.train_dataset=\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100 \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+# # configs.wights_path="logs/1946/checkpoints/epoch_026.ckpt" \
+# python src/train.py \
+# trainer=ddp \
+# task_name=1964j \
+# configs.train_dataset=\'ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100 \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+
+
+# python src/train.py \
+# task_name=1300e \
+# configs.train_dataset=\'ava_train,kinetics_train\' \
+# configs.test_dataset=\'ava_val\' \
+# configs.action_space="ava" \
+# configs.bottle_neck="conv" \
+# configs.frame_length=125 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=1 \
+# trainer.nodes=8 \
+# configs.train_batch_size=8 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.render.enable=False \
+
+
+
+# # Submitted batch job 65226947
+# python src/train.py \
+# task_name=1930 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.compute_map=True \
+# configs.action_space="ava" \
+# configs.ava.gt_type="all" \
+# configs.render.enable=False \
+# configs.render.num_videos=2 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.pos_embedding="learned" \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'\' \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-2 \
+# configs.scheduler='cosine' \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=30 \
+# trainer.gradient_clip_val=0.5 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# trainer.strategy=ddp \
+# trainer.sync_batchnorm=True \
+# trainer.devices=8 \
+# trainer.num_nodes=1 \
+# callbacks.model_checkpoint.monitor="step" \
+# callbacks.model_checkpoint.mode="max" \
+# callbacks.model_checkpoint.save_top_k=-1 \
+# configs.train_batch_size=8 \
+# configs.train_num_workers=8 \
+# configs.test_batch_size=8 \
+# configs.test_num_workers=8 \
+# # configs.vit.mlp_dim=512 \
+# # configs.vit.dim_head=64 \
+# # configs.vit.dropout=0.4 \
+# # configs.vit.emb_dropout=0.4 \
+# # +trainer.val_check_interval=1000 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+# # trainer.limit_train_batches=1000 \
+# # configs.vit.depth: 6
+# # configs.vit.heads: 8
+# # trainer.limit_val_batches=100 \
+
+
+
+
+# #  65313936
+# python src/train.py \
+# task_name=1951 \
+# trainer=ddp \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=128 \
+# configs.extra_feat.pose_shape.en_dim=64 \
+# configs.in_feat=320 \
+# configs.lr=0.0001 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+
+
+
+# task_name=1952 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=128 \
+# configs.extra_feat.pose_shape.en_dim=64 \
+# configs.in_feat=320 \
+# configs.lr=0.01 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+
+
+
+
+
+# # 65322013
+# task_name=1960 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_10BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=128 \
+# configs.extra_feat.pose_shape.en_dim=64 \
+# configs.in_feat=320 \
+# configs.lr=0.01 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+
+
+
+
+# # 65322019
+# task_name=1961 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_4\' \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_BCE\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=128 \
+# configs.extra_feat.pose_shape.en_dim=64 \
+# configs.in_feat=320 \
+# configs.lr=0.001 \
+# configs.weight_decay=5e-6 \
+# trainer.gradient_clip_val=10.0 \
+# configs.mask_ratio=0.6 \
+
+
+
+
+
+
+
+# Submitted batch job 65363665
+# python src/train.py \
+# trainer=ddp \
+# task_name=1961a \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+# Submitted batch job 65363664
+# python src/train.py \
+# trainer=ddp \
+# task_name=1962a \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=512 \
+# configs.extra_feat.mvit.en_dim=256 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1970b \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100 \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1970c \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100 \
+# # +trainer.val_check_interval=1000 \
+
+
+
+# python src/train.py -m \
+# trainer=ddp \
+# task_name=1970d \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100 \
+# # +trainer.val_check_interval=1000 \
+
+
+
+# python src/train.py -m \
+# trainer=ddp \
+# task_name=1970e \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100 \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+# python src/train.py -m \
+# hydra/launcher=submitit_slurm \
+# launcher=slurm \
+# trainer=ddp \
+# task_name=1971 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\',\'ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all","both" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0,0.5 \
+# configs.masked=False,True \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+
+
+
+
+
+# python src/train.py -m \
+# trainer=ddp \
+# task_name=1972c \
+# configs.wights_path="logs/1962b/checkpoints/epoch_026.ckpt" \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.ava.distil_type="10kl_bce" \
+# configs.lr=1e-4 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # configs.warmup_epochs=10 \
+# # trainer.max_epochs=100 \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+# python src/train.py -m \
+# trainer=ddp \
+# task_name=1972e \
+# configs.wights_path="logs/1962b/checkpoints/epoch_026.ckpt" \
+# configs.train_dataset=\'ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="gt" \
+# configs.ava.distil_type="10kl_bce" \
+# configs.lr=1e-4 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # configs.warmup_epochs=10 \
+# # trainer.max_epochs=100 \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+# python src/train.py -m \
+# trainer=ddp \
+# task_name=1972d \
+# configs.wights_path="logs/1962b/checkpoints/epoch_026.ckpt" \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-4 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # configs.warmup_epochs=10 \
+# # trainer.max_epochs=100 \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+# python src/train.py -m \
+# trainer=ddp \
+# task_name=1972f \
+# configs.wights_path="logs/1962b/checkpoints/epoch_026.ckpt" \
+# configs.dataset_loader=fast \
+# configs.train_dataset=\'ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-4 \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # configs.warmup_epochs=10 \
+# # trainer.max_epochs=100 \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+# python src/train.py -m \
+# trainer=ddp \
+# task_name=1972g \
+# configs.train_dataset=\'ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="both" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-4 \
+# configs.frame_length=125 \
+# configs.max_people=5 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# # configs.warmup_epochs=10 \
+# # trainer.max_epochs=100 \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+
+
+# python src/train.py -m \
+# configs.wights_path="logs/1962b/checkpoints/epoch_026.ckpt" \
+# configs.dataset_loader=fast \
+# trainer=ddp \
+# task_name=19601 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-4 \
+# configs.mask_type_test="zero" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+
+# python src/train.py -m \
+# configs.wights_path="logs/19601/0/checkpoints/last-v4.ckpt" \
+# configs.dataset_loader=fast \
+# trainer=ddp \
+# task_name=19602 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-3 \
+# configs.mask_type_test="zero" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+
+
+
+# # configs.wights_path="logs/19602/0/checkpoints/last.ckpt" \
+# python src/train.py -m \
+# configs.dataset_loader=fast \
+# trainer=ddp \
+# task_name=19603 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-3 \
+# configs.mask_type_test="zero" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+
+
+# python src/train.py -m \
+# configs.use_rakel=True \
+# configs.dataset_loader=fast \
+# trainer=ddp \
+# task_name=19605 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-3 \
+# configs.mask_type_test="zero" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+
+
+# python src/train.py -m \
+# configs.use_rakel=True \
+# configs.dataset_loader=fast \
+# trainer=ddp \
+# task_name=19606 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-3 \
+# configs.mask_type_test="zero_x" \
+# configs.frame_length=125 \
+# configs.max_people=5 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+# python src/train.py \
+# trainer=ddp \
+# task_name=1970p \
+# configs.train_dataset=\'kinetics_train_4,ava_train_4\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=5 \
+# configs.loss_type=\'action_bce\' \
+# configs.extra_feat.enable=\'mvit,hmr\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.hmr.en_dim=1024 \
+# configs.extra_feat.hmr.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=128 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=128 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100 \
+# # +trainer.val_check_interval=1000 \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# python src/train.py -m \
+# hydra/launcher=submitit_slurm \
+# launcher=slurm \
+# trainer=ddp \
+# configs.dataset_loader=fast \
+# task_name=1973p1 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.use_rakel=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\',\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.extra_feat.pose_shape.mid_dim=256 \
+# configs.extra_feat.pose_shape.en_dim=512 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.test_type="track.fullframe|" \
+
+
+# python src/train.py -m \
+# hydra/launcher=submitit_slurm \
+# launcher=slurm \
+# trainer=ddp \
+# configs.dataset_loader=fast \
+# task_name=1973p2 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.use_rakel=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'action_bce\',\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'\' \
+# configs.extra_feat.pose_shape.mid_dim=256 \
+# configs.extra_feat.pose_shape.en_dim=512 \
+# configs.in_feat=512 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.6 \
+# configs.masked=True \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # configs.wights_path="logs/19602/0/checkpoints/last.ckpt" \
+# python src/train.py -m \
+# configs.dataset_loader=fast \
+# trainer=ddp \
+# task_name=19607 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2" \
+# configs.ava.gt_type="all" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-3 \
+# configs.mask_type_test="zero" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.0 \
+# configs.masked=False \
+# configs.warmup_epochs=10 \
+# trainer.max_epochs=100 \
+# configs.test_type="track.fullframe|" \
+
+
+
+
+
+
+
+
+# # configs.wights_path="logs/19602/0/checkpoints/last.ckpt" \
+# python src/train.py -m \
+# configs.dataset_loader=fast \
+# trainer=ddp \
+# task_name=19608 \
+# configs.train_dataset=\'kinetics_train_4,ava_train_5\' \
+# configs.test_dataset=\'ava_val_5\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv" \
+# configs.ava.gt_type="all" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-3 \
+# configs.mask_type_test="zero" \
+# configs.frame_length=125 \
+# configs.max_people=1 \
+# configs.loss_type=\'pose_l2,loca_l1,action_bce\' \
+# configs.extra_feat.enable=\'mvit\' \
+# configs.extra_feat.mvit.mid_dim=1024 \
+# configs.extra_feat.mvit.en_dim=1024 \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.in_feat=1280 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=0.5 \
+# configs.mask_ratio=0.6 \
+# configs.masked=False \
+# configs.warmup_epochs=5 \
+# trainer.max_epochs=50 \
+
+
+
