@@ -56,7 +56,7 @@ class PHALP_action_dataset_fast(Dataset):
         self.frame_length     = self.opt.frame_length
         self.max_tokens       = self.opt.max_people
         self.train            = train
-        self.mean_, self.std_ = np.load("data/mean_std.npy")
+        self.mean_, self.std_ = np.load("data/ava/mean_std.npy")
         self.mean_pose_shape  = np.concatenate((self.mean_, np.zeros((1, 229-self.mean_.shape[1]))), axis=1)
         self.std_pose_shape   = np.concatenate((self.std_, np.ones((1, 229-self.std_.shape[1]))), axis=1)
         
@@ -71,22 +71,7 @@ class PHALP_action_dataset_fast(Dataset):
         self.pixel_std_       = np.array([0.229 * 255, 0.224 * 255, 0.225 * 255]).reshape(3,1,1)
 
         self.dataset_roots        = {
-            "ava_val_1"        : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.307_ava_val/results_slowfast_v3/",         1],
-            "ava_val_2"        : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.400_ava_val/results_slowfast_v5/",         1],
-            "ava_val_3"        : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.401_ava_val/results_slowfast_v5/",         1],
-            "ava_rend_"        : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.401_ava_val/results_slowfast_v6///",      1],            
-            "ava_rend_climb"   : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.401_ava_val/results_slowfast_v7////",      1],            
-            "kinetics_train"   : ["",                "/checkpoint/jathushan/TENET/out/Videos_v4.400_kinetics_train/results_slowfast_v6/",  self.opt.kinetics.sampling_factor],
-            "kinetics_val"     : ["",                "/checkpoint/jathushan/TENET/out/Videos_v4.400_kinetics_val/results_slowfast_v6/",    1],
-            "ava_train"        : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.400_ava_train/results_slowfast_v6/",       self.opt.ava.sampling_factor],
-            "ava_val"          : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.401_ava_val/results_slowfast_v6/",         1],
-            "ava_train_4"      : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.400_ava_train/results_slowfast_v7/",       self.opt.ava.sampling_factor],
-            "ava_val_4"        : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.401_ava_val/results_slowfast_v7/",         1],
-            "kinetics_train_4" : ["",                "/checkpoint/jathushan/TENET/out/Videos_v4.400_kinetics_train/results_slowfast_v7_2/",  self.opt.kinetics.sampling_factor],
-            "ava_train_5"      : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.403_ava_train/results_slowfast_v12_3/",       self.opt.ava.sampling_factor],
-            "ava_val_5"        : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.403_ava_val/results_slowfast_v11_3/",         1],
-                  
-                  
+ 
             # 1Hz
             "kinetics_train_7" : ["",                "/checkpoint/jathushan/TENET/out/Videos_v4.400_kinetics_train/results_slowfast_v21_1/",  self.opt.kinetics.sampling_factor],
             "ava_train_7"      : ["ava",             "/checkpoint/jathushan/TENET/out/Videos_v4.500_ava_train/results_slowfast_v21_1/",       self.opt.ava.sampling_factor],
@@ -145,9 +130,8 @@ class PHALP_action_dataset_fast(Dataset):
             self.data = task_divider(self.data, self.opt.test_batch_id, self.opt.number_of_processes)
             self.track2video = task_divider(self.track2video, self.opt.test_batch_id, self.opt.number_of_processes)
 
-        self.ava_valid_classes = np.load("data/ava_valid_classes.npy")
-        self.a1                = np.load("data/ava_clases_bad1.npy")
-        self.kinetics_annotations = joblib.load("data/kinetics_annot_train.pkl")
+        self.ava_valid_classes = np.load("data/ava/ava_valid_classes.npy")
+        self.kinetics_annotations = joblib.load("data/kinetics/kinetics_annot_train.pkl")
         print("Number of tracks: ", len(self.data))
         
         if(self.opt.use_optimized_pose):
@@ -168,7 +152,7 @@ class PHALP_action_dataset_fast(Dataset):
     def get_dataset(self, root_dir="", filter_seq="posetrack-train", num_sample=1, min_track_length=20, total_num_tracks=None):
         count    = 0
         count_f  = 0
-        path_npy = "data/"+"fast_".join(root_dir.split("/"))+".npy"
+        path_npy = "data/_TMP/"+"fast_".join(root_dir.split("/"))+".npy"
         
         # to store all the files in a list
         if(os.path.exists(path_npy)):
@@ -377,12 +361,6 @@ class PHALP_action_dataset_fast(Dataset):
             TMP_2 = detection_data["action_emb"][start_frame:end_frame].copy()
             if(self.opt.mixed_training==1):
                 TMP_ = (TMP_1 + TMP_2)/2.0
-            if(self.opt.mixed_training==2):
-                TMP_1[:, :, self.a1-1] = TMP_2[:, :, self.a1-1]
-                TMP_ = TMP_1.copy()
-            if(self.opt.mixed_training==3):
-                TMP_1[:, :, self.a1-1] = (TMP_2[:, :, self.a1-1]+TMP_1[:, :, self.a1-1])/2.0
-                TMP_ = TMP_1.copy()
             if(self.opt.mixed_training==4):
                 TMP_1 = 0.75*TMP_1+0.25*TMP_2
                 TMP_ = TMP_1.copy()

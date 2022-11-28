@@ -266,19 +266,19 @@ configs:
 
     smpl_cfg:
         SMPL:
-            MODEL_PATH: data/models
+            MODEL_PATH: data/3D
             GENDER: neutral
             MODEL_TYPE: smpl
             NUM_BODY_JOINTS: 23
-            JOINT_REGRESSOR_H36M: data/J_regressor_h36m.npy
-            JOINT_REGRESSOR_EXTRA: data/SMPL_to_J19.pkl
-            TEXTURE: data/texture.npz
+            JOINT_REGRESSOR_H36M: data/3D/J_regressor_h36m.npy
+            JOINT_REGRESSOR_EXTRA: data/3D/SMPL_to_J19.pkl
+            TEXTURE: data/3D/texture.npz
         MODEL:
             IMAGE_SIZE: 256
             SMPL_HEAD:
                 TYPE: basic
                 POOL: max
-                SMPL_MEAN_PARAMS: data/smpl_mean_params.npz
+                SMPL_MEAN_PARAMS: data/3D/smpl_mean_params.npz
                 IN_CHANNELS: 2048
             BACKBONE:
                 TYPE: resnet

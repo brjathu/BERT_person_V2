@@ -57,7 +57,7 @@ import matplotlib.pyplot as plt
 # import joblib
 import numpy as np
 
-class_sum = joblib.load('data/ava_kinetics_v1_0/class_sum.pkl')
+class_sum = joblib.load('data/ava/class_sum.pkl')
 
 
 
@@ -306,7 +306,7 @@ class BERT_PERSON_LitModule(LightningModule):
         else:
             raise NotImplementedError("Renderer not implemented")
     
-        self.mean_, self.std_ = np.load("data/mean_std.npy")
+        self.mean_, self.std_ = np.load("data/ava/mean_std.npy")
         self.mean_            = np.concatenate((self.mean_, np.zeros((1, 229-self.mean_.shape[1]))), axis=1)
         self.std_             = np.concatenate((self.std_, np.ones((1, 229-self.std_.shape[1]))), axis=1)
         self.mean_, self.std_ = torch.tensor(self.mean_), torch.tensor(self.std_)
@@ -320,9 +320,8 @@ class BERT_PERSON_LitModule(LightningModule):
         os.makedirs(self.cfg.storage_folder + "/videos/", exist_ok=True)
         log.info("Storage folder : " + self.cfg.storage_folder)
         
-        self.ava_valid_classes = joblib.load("data/ava_class_mappping.pkl")
+        self.ava_valid_classes = joblib.load("data/ava/ava_class_mappping.pkl")
         self.ava_valid_classes_inv = {v: k for k, v in self.ava_valid_classes.items()}
-        self.ava_max_pool_classes = np.load("data/max_pool_classes.npy")
         self.colors            = get_colors()
         
     def forward(self, tokens, mask_type):
@@ -509,30 +508,6 @@ class BERT_PERSON_LitModule(LightningModule):
                         pred      = torch.sigmoid(pred_action[bid, s_:e_, 0, :].cpu())
                         pred      = pred.mean(0, keepdim=True)
                         preds     = torch.cat([torch.zeros(pred.shape[0],1), pred], dim=1)
-                        
-                    elif("part" in self.cfg.test_type.split("|")[1]):
-                        w_x       = int(self.cfg.test_type.split("part.")[1].split(".")[0])
-                        s_        = kfid - w_x if kfid-w_x>0 else 0
-                        e_        = kfid + w_x if kfid+w_x<max_length else max_length
-                        pred_1    = torch.sigmoid(pred_action[bid, s_:e_, 0, :].cpu())
-                        pred_1    = pred_1.mean(0, keepdim=True)
-                        
-                        s_        = kfid - 2*w_x if kfid-2*w_x>0 else 0
-                        e_        = kfid + 2*w_x if kfid+2*w_x<max_length else max_length
-                        pred_2    = torch.sigmoid(pred_action[bid, s_:e_, 0, :].cpu())
-                        pred_2    = pred_2.max(0, keepdim=True)[0]
-                        # if(self.cfg.debug):
-                            # import ipdb; ipdb.set_trace()
-                        valid_ = []
-                        if(self.cfg.ava.predict_valid):
-                            for vi in self.ava_max_pool_classes:
-                                valid_.append(self.ava_valid_classes_inv[vi]-1)
-                        else:
-                            for vi in self.ava_max_pool_classes:
-                                valid_.append(vi-1)
-                        valid_ = np.array(valid_)
-                        pred_1[:, valid_] = pred_2[:, valid_]
-                        preds     = torch.cat([torch.zeros(pred_1.shape[0],1), pred_1], dim=1)
 
                     elif("max" in self.cfg.test_type.split("|")[1]):
                         w_x       = int(self.cfg.test_type.split("max.")[1].split(".")[0])
@@ -568,7 +543,7 @@ class BERT_PERSON_LitModule(LightningModule):
         AVA_VALID_FRAMES = range(902, 1799)
         log.info("Start reading predictions.")
         slowfast_files = [i for i in os.listdir(slowfast_path) if i.endswith(".pkl")]
-        label_map, allowed_class_ids = AvaLabeledVideoFramePaths.read_label_map('data/ava_action_list.pbtxt')
+        label_map, allowed_class_ids = AvaLabeledVideoFramePaths.read_label_map('data/ava/ava_action_list.pbtxt')
         f = open(csv_path, 'w')
         writer = csv.writer(f)
         counter = 0

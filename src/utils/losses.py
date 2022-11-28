@@ -75,7 +75,7 @@ def compute_loss(opt, output, smpl_output, output_data, input_data, train=True):
         "kp"     : 0, 
     }
 
-    samples_per_class = np.load("data/class_sum.npy")
+    samples_per_class = np.load("data/ava/class_sum.npy")
     cb_loss = CBLoss(loss_type="focal_loss", beta=0.999, fl_gamma=2, samples_per_class=samples_per_class, class_balanced=False)
 
     for fi in range(opt.num_smpl_heads):
