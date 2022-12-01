@@ -790,7 +790,10 @@ class BERT_PERSON_LitModule(LightningModule):
             for fid in range(min(len(frame_name_array[vid]), 1000)):
                 
                 if(frame_name_array[vid][fid]=="-1"): break
-                image_ = self.load_image(frame_name_array[vid][fid], resolution=1080)
+                if(self.cfg.test_dataset=="youtube"):
+                    image_ = self.load_image("/private/home/jathushan/3D/TENET/" + frame_name_array[vid][fid], resolution=1080)
+                else:
+                    image_ = self.load_image(frame_name_array[vid][fid], resolution=1080)
                 # color  = np.array([[125, 125, 125]]).repeat(self.cfg.max_people, 0)/255.0
                 color  = np.array([[125, 125, 125]])/255.0
                 color  = color.repeat(self.cfg.max_people,0)
@@ -865,7 +868,7 @@ class BERT_PERSON_LitModule(LightningModule):
                 pred_label      = torch.sigmoid(pred_action[fid][0])
                 _, order        = torch.topk(pred_label, k=10)
 
-                label_map, allowed_class_ids = AvaLabeledVideoFramePaths.read_label_map('data/ava_action_list.pbtxt')
+                label_map, allowed_class_ids = AvaLabeledVideoFramePaths.read_label_map('data/ava/ava_action_list.pbtxt')
                 top_labels = []
                 top_probs  = []
                 for i in order: 

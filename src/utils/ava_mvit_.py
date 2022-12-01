@@ -445,12 +445,12 @@ if __name__ == '__main__':
         
         phalp_files = task_divider(phalp_files, args.batch_id, args.num_of_process)
         
-    for phalp_file in tqdm(phalp_files):
+    for phalp_file in phalp_files:
     
         
         if(dataset_slowfast=="youtube"):
             
-            try:
+            # try:
                 phalp_             = joblib.load(phalp_path + phalp_file)
                 all_frames         = list(phalp_.keys())
                 tracks_dict        = get_tracks(phalp_)
@@ -479,6 +479,7 @@ if __name__ == '__main__':
                     NUM_STEPS        = 6
                     NUM_FRAMES       = seq_length
                     list_iter        = list(range(len(list_of_frames)//NUM_STEPS + 1))
+                    
                     for t_, time_stamp in enumerate(list_iter):    
                         print("Generating predictions for time stamp: {} sec".format(time_stamp))
                     
@@ -495,7 +496,7 @@ if __name__ == '__main__':
                         start_id    = mid_id - NUM_FRAMES//2 if mid_id - NUM_FRAMES//2 > 0 else 0
                         end_id      = mid_id + NUM_FRAMES//2 if mid_id + NUM_FRAMES//2 < len(all_frames) else len(all_frames)
                             
-                            
+                        
                         # import ipdb; ipdab.set_trace()
                         # get the frames for mvit
                         list_of_all_frames = []
@@ -506,7 +507,7 @@ if __name__ == '__main__':
                             elif frame_id+i>128: frame_id = 128
                             else:                  frame_id = frame_id+i
                             frame_name_all = '%06d.jpg'%(frame_id,)
-                            frame_key_all  = phalp_file[8:-4] + "/img/" + '%05d.jpg'%(frame_id,)
+                            frame_key_all  = phalp_file[8:-4] + "/img/" + '%06d.jpg'%(frame_id,)
                             # import ipdb; ipdb.set_trace()
                             # import pdb; pdb.set_trace()
                             if frame_name_all not in list_of_all_frames:
@@ -514,12 +515,12 @@ if __name__ == '__main__':
                                     list_of_all_frames.append(frame_name_all)
                                     list_of_all_paths.append(root_path + "/" + frame_key_all)
                                         
-                                        
-                        list_of_paths_all = list([phalp_[i]['frame_path'] for i in all_frames[start_id:end_id]])
-                        list_of_paths_window = list([phalp_[i]['frame_path'] for i in time_stamp_])
+                        # import ipdb; ipdb.set_trace()             
+                        # list_of_paths_all = list([phalp_[i]['frame_path'] for i in all_frames[start_id:end_id]])
+                        list_of_paths_window = list(["/private/home/jathushan/3D/TENET/" + phalp_[i]['frame_path'] for i in time_stamp_])
                         predicted_boxes   = mid_bbox.reshape(1, 4)
                         predicted_boxes   = np.concatenate([predicted_boxes[:, :2], predicted_boxes[:, :2] + predicted_boxes[:, 2:4]], 1)
-                        slowfast_, clip_  = generate_pseudo_labels(t_, list_of_paths_all, list_of_paths_window, predicted_boxes, make_video, args.add_clip)
+                        slowfast_, clip_  = generate_pseudo_labels(t_, list_of_all_paths, list_of_paths_window, predicted_boxes, make_video, args.add_clip)
                         for i_, frame_ in enumerate(time_stamp_):
                             tracks_dict[track_id][frame_]['action_emb_p']      = slowfast_[0].cpu().float().numpy()                        
                             tracks_dict[track_id][frame_]['action_features']   = slowfast_[2].cpu().float().numpy()                        
@@ -536,14 +537,14 @@ if __name__ == '__main__':
                             for img in imgs_:
                                 video_file.write(img)
     
-                        print(t_, len(list_of_paths_all), len(predicted_boxes))
+                        print(t_, len(list_of_all_paths), len(predicted_boxes))
                         
                     if(make_video): video_file.release()
                     if(make_video): print('Predictions are saved to the video file: ', video_save_path)
                     # joblib.dump(tracks_dict[track_id], save_path + phalp_file[:-4] + "_" + str(track_id) + "_" + str(len(tracks_dict[track_id].keys())) + ".pkl", compress=3)
                     create_fast_tracklets(copy.deepcopy(tracks_dict[track_id]), fast_path + phalp_file[:-4] + "_" + str(track_id) + "_" + str(len(tracks_dict[track_id].keys())) + ".pkl", 0)
-            except:
-                pass
+            # except:
+            #     pass
         
         if(dataset_slowfast=="kinetics-train" or dataset_slowfast=="kinetics-val"):
             
