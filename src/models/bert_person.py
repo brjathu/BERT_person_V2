@@ -81,7 +81,112 @@ class RAKEL(nn.Module):
             x2 = self.dropout(x_)
             x[:, self.label_set[i]] += self.fc_i[i](x2)[:, self.label_set[i]]
     
-        return x    
+        return x 
+    
+    
+class Interaction_module(nn.Module):
+    def __init__(self, cfg, dim_in, dropout=0.1):
+        super(Interaction_module, self).__init__()
+        self.cfg = cfg
+        
+        self.fc_0 = nn.Linear(dim_in, dim_in)
+        self.fc_01 = nn.Linear(2*dim_in, dim_in)
+        self.fc_02 = nn.Linear(2*dim_in, dim_in)
+        self.fc_03 = nn.Linear(2*dim_in, dim_in)
+        self.fc_04 = nn.Linear(2*dim_in, dim_in)
+        self.fc_z0 = nn.Linear(dim_in, dim_in)
+        
+        self.fc_1 = nn.Linear(dim_in, dim_in)
+        self.fc_10 = nn.Linear(2*dim_in, dim_in)
+        self.fc_12 = nn.Linear(2*dim_in, dim_in)
+        self.fc_13 = nn.Linear(2*dim_in, dim_in)
+        self.fc_14 = nn.Linear(2*dim_in, dim_in)
+        self.fc_z1 = nn.Linear(dim_in, dim_in)
+        
+        self.fc_2 = nn.Linear(dim_in, dim_in)
+        self.fc_20 = nn.Linear(2*dim_in, dim_in)
+        self.fc_21 = nn.Linear(2*dim_in, dim_in)
+        self.fc_23 = nn.Linear(2*dim_in, dim_in)
+        self.fc_24 = nn.Linear(2*dim_in, dim_in)
+        self.fc_z2 = nn.Linear(dim_in, dim_in)
+        
+        self.fc_3 = nn.Linear(dim_in, dim_in)
+        self.fc_30 = nn.Linear(2*dim_in, dim_in)
+        self.fc_31 = nn.Linear(2*dim_in, dim_in)
+        self.fc_32 = nn.Linear(2*dim_in, dim_in)
+        self.fc_34 = nn.Linear(2*dim_in, dim_in)
+        self.fc_z3 = nn.Linear(dim_in, dim_in)
+        
+        self.fc_4 = nn.Linear(dim_in, dim_in)
+        self.fc_40 = nn.Linear(2*dim_in, dim_in)
+        self.fc_41 = nn.Linear(2*dim_in, dim_in)
+        self.fc_42 = nn.Linear(2*dim_in, dim_in)
+        self.fc_43 = nn.Linear(2*dim_in, dim_in)
+        self.fc_z4 = nn.Linear(dim_in, dim_in)
+        
+        self.gate_0 = nn.Parameter(torch.tensor([0.]))
+        self.gate_1 = nn.Parameter(torch.tensor([0.]))
+        self.gate_2 = nn.Parameter(torch.tensor([0.]))
+        self.gate_3 = nn.Parameter(torch.tensor([0.]))
+        self.gate_4 = nn.Parameter(torch.tensor([0.]))
+        
+    def forward(self, x):
+        bs, T, P, dim = x.shape
+
+        
+        x0 = x[:, :, ::5, :]
+        x1 = x[:, :, 1::5, :]
+        x2 = x[:, :, 2::5, :]
+        x3 = x[:, :, 3::5, :]
+        x4 = x[:, :, 4::5, :]
+        
+        en_x0 = self.fc_0(x0)
+        en_x1 = self.fc_1(x1)
+        en_x2 = self.fc_2(x2)
+        en_x3 = self.fc_3(x3)
+        en_x4 = self.fc_4(x4)
+        
+        en_x01 = self.fc_01(torch.cat([en_x0, en_x1], dim=3))
+        en_x02 = self.fc_02(torch.cat([en_x0, en_x2], dim=3))
+        en_x03 = self.fc_03(torch.cat([en_x0, en_x3], dim=3))
+        en_x04 = self.fc_04(torch.cat([en_x0, en_x4], dim=3))
+        
+        en_x10 = self.fc_10(torch.cat([en_x1, en_x0], dim=3))
+        en_x12 = self.fc_12(torch.cat([en_x1, en_x2], dim=3))
+        en_x13 = self.fc_13(torch.cat([en_x1, en_x3], dim=3))
+        en_x14 = self.fc_14(torch.cat([en_x1, en_x4], dim=3))
+        
+        en_x20 = self.fc_20(torch.cat([en_x2, en_x0], dim=3))
+        en_x21 = self.fc_21(torch.cat([en_x2, en_x1], dim=3))
+        en_x23 = self.fc_23(torch.cat([en_x2, en_x3], dim=3))
+        en_x24 = self.fc_24(torch.cat([en_x2, en_x4], dim=3))
+        
+        en_x30 = self.fc_30(torch.cat([en_x3, en_x0], dim=3))
+        en_x31 = self.fc_31(torch.cat([en_x3, en_x1], dim=3))
+        en_x32 = self.fc_32(torch.cat([en_x3, en_x2], dim=3))
+        en_x34 = self.fc_34(torch.cat([en_x3, en_x4], dim=3))
+        
+        en_x40 = self.fc_40(torch.cat([en_x4, en_x0], dim=3))
+        en_x41 = self.fc_41(torch.cat([en_x4, en_x1], dim=3))
+        en_x42 = self.fc_42(torch.cat([en_x4, en_x2], dim=3))
+        en_x43 = self.fc_43(torch.cat([en_x4, en_x3], dim=3))
+        
+        en_z0 = self.fc_z0(en_x0 + en_x01 + en_x02 + en_x03 + en_x04)
+        en_z1 = self.fc_z1(en_x1 + en_x10 + en_x12 + en_x13 + en_x14)
+        en_z2 = self.fc_z2(en_x2 + en_x20 + en_x21 + en_x23 + en_x24)
+        en_z3 = self.fc_z3(en_x3 + en_x30 + en_x31 + en_x32 + en_x34)
+        en_z4 = self.fc_z4(en_x4 + en_x40 + en_x41 + en_x42 + en_x43)
+        
+        import ipdb; ipdb.set_trace()
+        en_z0 = x0 + en_z0 * self.gate_0
+        en_z1 = x1 + en_z1 * self.gate_1
+        en_z2 = x2 + en_z2 * self.gate_2
+        en_z3 = x3 + en_z3 * self.gate_3
+        en_z4 = x4 + en_z4 * self.gate_4
+        
+        z = torch.cat([en_z0, en_z1, en_z2, en_z3, en_z4], dim=2)
+        
+        return z.view(bs*T*P, dim)
     
 def read_ava_pkl(pkl_file, refence_file=None, best=False):
     def get_actions(pkl_file):
@@ -231,6 +336,9 @@ class BERT_PERSON_LitModule(LightningModule):
                                             nn.Linear(self.cfg.in_feat, 3)
                                         ) for _ in range(self.cfg.num_smpl_heads)])
         
+        if(self.cfg.vit.use_interaction_module):
+            self.interaction_module = nn.ModuleList([Interaction_module(self.cfg, self.cfg.in_feat) for _ in range(self.cfg.num_smpl_heads)])
+            
         # for 1802a
         ava_action_classes          = self.cfg.ava.num_action_classes if not(self.cfg.ava.predict_valid) else self.cfg.ava.num_valid_action_classes
         if(self.cfg.use_rakel):
@@ -371,9 +479,22 @@ class BERT_PERSON_LitModule(LightningModule):
             smooth_embed     = pose_tokens.view(pose_tokens.shape[0]*pose_tokens.shape[1], -1)
             pred_smpl_params = [self.smpl_head[i](smooth_embed[:, :])[0] for i in range(self.cfg.num_smpl_heads)]
             pred_cam         = [self.loca_head[i](smooth_embed[:, :]) for i in range(self.cfg.num_smpl_heads)]
-            action_preds_ava = [self.action_head_ava[i](smooth_embed[:, :]) for i in range(self.cfg.num_smpl_heads)]
-            # action_preds_ava2 = [self.action_head_ava[i](pose_tokens) for i in range(self.cfg.num_smpl_heads)] # [bs, 125, 256]
-
+            
+            if(self.cfg.vit.use_interaction_module):
+                
+                smooth_embed_int = pose_tokens.view(pose_tokens.shape[0], pose_tokens.shape[1]//self.cfg.max_people, self.cfg.max_people, -1)
+                action_preds_mid = [self.interaction_module[i](smooth_embed_int) for i in range(self.cfg.num_smpl_heads)]
+                action_preds_mid = torch.stack(action_preds_mid, dim=0)
+                action_preds_ava = [self.action_head_ava[i](action_preds_mid[i, :, :]) for i in range(self.cfg.num_smpl_heads)]
+            else:
+                action_preds_ava = [self.action_head_ava[i](smooth_embed[:, :]) for i in range(self.cfg.num_smpl_heads)]
+                # action_preds_ava2 = [self.action_head_ava[i](pose_tokens) for i in range(self.cfg.num_smpl_heads)] # [bs, 125, 256]
+            action_preds_ava = torch.stack(action_preds_ava, dim=0)
+            action_preds_ava = action_preds_ava.permute(1, 0, 2)
+            
+            
+            
+            
             smpl_output      = self.smpl(**{k: v.float() for k,v in pred_smpl_params[0].items()}, pose2rot=False)
             BS               = smooth_embed.size(0)
             dtype            = smooth_embed.dtype
@@ -382,8 +503,7 @@ class BERT_PERSON_LitModule(LightningModule):
             pred_cam_t       = torch.stack(pred_cam, dim=0)
             pred_cam_t       = pred_cam_t.permute(1, 0, 2)
     
-            action_preds_ava = torch.stack(action_preds_ava, dim=0)
-            action_preds_ava = action_preds_ava.permute(1, 0, 2)
+            
             
             # action_preds_ava2 = torch.stack(action_preds_ava2, dim=0) # [1, bs, 125, 256]
             # action_preds_ava2 = action_preds_ava2.permute(1, 2, 0, 3) # [bs, 125, 1, 256]

@@ -326,3 +326,78 @@
 # configs.vit.droppath=0.1 \
 
 
+
+
+# # interaction module
+# python src/train.py -m \
+# trainer=ddp \
+# task_name=3000_M3 \
+# configs.dataset_loader=fast \
+# configs.train_dataset=\'kinetics_train_7,ava_train_7,avaK_train_7\' \
+# configs.test_dataset=\'ava_val_8\' \
+# configs.ava.predict_valid=True \
+# configs.bottle_neck="conv2k" \
+# configs.ava.gt_type="all" \
+# configs.ava.distil_type="both_bce" \
+# configs.lr=1e-3 \
+# configs.mask_type_test="zero" \
+# configs.frame_length=125 \
+# configs.max_people=5 \
+# configs.extra_feat.enable=\'\' \
+# configs.extra_feat.pose_shape.mid_dim=229 \
+# configs.extra_feat.pose_shape.en_dim=256 \
+# configs.extra_feat.relative_pose.mid_dim=128 \
+# configs.extra_feat.relative_pose.en_dim=256 \
+# configs.use_relative_pose=True \
+# configs.use_optimized_pose=False \
+# configs.in_feat=256 \
+# configs.weight_decay=5e-2 \
+# trainer.gradient_clip_val=2.0 \
+# configs.mask_ratio=0.2 \
+# configs.masked=False \
+# configs.train_batch_size=4 \
+# configs.test_batch_size=4 \
+# configs.train_num_workers=4 \
+# configs.test_num_workers=4 \
+# trainer.accumulate_grad_batches=8 \
+# configs.vit.use_interaction_module=True \
+# # trainer.devices=1 \
+# # callbacks.rich_progress_bar.refresh_rate=0 \
+
+
+
+# interaction module with tanh gate
+python src/train.py -m \
+trainer=ddp \
+task_name=3000_M3_1 \
+configs.dataset_loader=fast \
+configs.train_dataset=\'kinetics_train_7,ava_train_7,avaK_train_7\' \
+configs.test_dataset=\'ava_val_8\' \
+configs.ava.predict_valid=True \
+configs.bottle_neck="conv2k" \
+configs.ava.gt_type="all" \
+configs.ava.distil_type="both_bce" \
+configs.lr=1e-3 \
+configs.mask_type_test="zero" \
+configs.frame_length=125 \
+configs.max_people=5 \
+configs.extra_feat.enable=\'\' \
+configs.extra_feat.pose_shape.mid_dim=229 \
+configs.extra_feat.pose_shape.en_dim=256 \
+configs.extra_feat.relative_pose.mid_dim=128 \
+configs.extra_feat.relative_pose.en_dim=256 \
+configs.use_relative_pose=True \
+configs.use_optimized_pose=False \
+configs.in_feat=256 \
+configs.weight_decay=5e-2 \
+trainer.gradient_clip_val=2.0 \
+configs.mask_ratio=0.2 \
+configs.masked=False \
+configs.train_batch_size=4 \
+configs.test_batch_size=4 \
+configs.train_num_workers=4 \
+configs.test_num_workers=4 \
+trainer.accumulate_grad_batches=8 \
+configs.vit.use_interaction_module=True \
+# trainer.devices=1 \
+# callbacks.rich_progress_bar.refresh_rate=0 \
