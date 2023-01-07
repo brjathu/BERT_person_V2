@@ -177,7 +177,6 @@ class Interaction_module(nn.Module):
         en_z3 = self.fc_z3(en_x3 + en_x30 + en_x31 + en_x32 + en_x34)
         en_z4 = self.fc_z4(en_x4 + en_x40 + en_x41 + en_x42 + en_x43)
         
-        import ipdb; ipdb.set_trace()
         en_z0 = x0 + en_z0 * self.gate_0
         en_z1 = x1 + en_z1 * self.gate_1
         en_z2 = x2 + en_z2 * self.gate_2
